@@ -1,0 +1,6 @@
+<FindbugsPlugin>
+	<Detector class="com.cjtucker.findbugsfinaldetector.IllegalExtensionOfFinalAnnotatedClass"
+			  speed="fast"
+			  reports="IEF_ILLEGAL_EXTENSION_OF_FINAL_CLASS" />
+	<BugPattern abbrev="IEF" type="IEF_ILLEGAL_EXTENSION_OF_FINAL_CLASS" category="BAD_PRACTICE" />
+</FindbugsPlugin>

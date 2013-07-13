@@ -1,0 +1,23 @@
+<MessageCollection>
+	<Detector class="com.cjtucker.findbugsfinaldetector.IllegalExtensionOfFinalAnnotatedClass">
+		<Details>
+			<![CDATA[
+<p> This detector finds extensions of classes that have been marked with the @Final annotation.  Classes marked @Final
+should not have subclasses in production code.
+]]>
+		</Details>
+	</Detector>
+
+	<BugPattern type="IEF_ILLEGAL_EXTENSION_OF_FINAL_CLASS">
+		<ShortDescription>Found illegal extension of final class</ShortDescription>
+		<LongDescription>Class {1} extends the @Final annotated class {2}</LongDescription>
+		<Details>
+			<![CDATA[
+<p> Class {1} may not extend from the class {2} marked @Final.  Such extensions are prohibited: an @Final marked class
+ must be treated as a final class in production code.
+]]>
+		</Details>
+	</BugPattern>
+
+	<BugCode abbrev="IEF">Found illegal extension of final element</BugCode>
+</MessageCollection>
