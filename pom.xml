@@ -19,6 +19,12 @@
 		<github.global.server>github</github.global.server>
 	</properties>
 
+	<scm>
+		<connection>scm:git:http://github.com/ctucker/${project.artifactId}</connection>
+		<developerConnection>scm:git:git://github.com/ctucker/${project.artifactId}</developerConnection>
+		<url>http://github.com/ctucker/${project.artifactId}</url>
+	</scm>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.google.code.findbugs</groupId>
