@@ -1,12 +1,9 @@
 package com.cjtucker.findbugs.conventionenforcer;
 
-import static com.cjtucker.findbugs.conventionenforcer.Samples.*;
-
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
-import com.cjtucker.findbugs.conventionenforcer.IllegalExtensionOfFinalAnnotatedClass;
 import com.youdevise.fbplugins.tdd4fb.DetectorAssert;
 import edu.umd.cs.findbugs.BugReporter;
 
@@ -14,17 +11,17 @@ import edu.umd.cs.findbugs.BugReporter;
 public class IllegalExtensionOfFinalAnnotatedClassTest {
 
 	private BugReporter bugReporter;
-	private IllegalExtensionOfFinalAnnotatedClass detector;
+	private IllegalExtensionOfFinalAnnotatedElement detector;
 
 	@Before
 	public void setUp() throws Exception {
 		bugReporter = DetectorAssert.bugReporterForTesting();
-		detector = new IllegalExtensionOfFinalAnnotatedClass(bugReporter);
+		detector = new IllegalExtensionOfFinalAnnotatedElement(bugReporter);
 	}
 
 	@Test
 	public void
-	raisesABugAgainsClassExtendingSuperclassWithFinalAnnotation() throws Exception {
+	raisesABugAgainstClassExtendingSuperclassWithFinalAnnotation() throws Exception {
 		DetectorAssert.assertBugReported(Samples.BadClass.class, detector, bugReporter);
 	}
 

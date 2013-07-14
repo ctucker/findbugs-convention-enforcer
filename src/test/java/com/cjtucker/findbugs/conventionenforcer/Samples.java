@@ -1,7 +1,5 @@
 package com.cjtucker.findbugs.conventionenforcer;
 
-import com.cjtucker.findbugs.conventionenforcer.Final;
-
 public class Samples {
 
 	@Final
@@ -15,5 +13,26 @@ public class Samples {
 
 	@Final static class FinalSubclass {}
 
+
+	class WithFinalMethod {
+		@Final void doNotOverride() {}
+		void safeToOverride() {}
+	}
+
+	class BadOverrideOfFinalMethod extends WithFinalMethod {
+		void doNotOverride() {}
+	}
+
+	class GoodOverrideOfNonFinalMethod extends WithFinalMethod {
+		void safeToOverride() {}
+	}
+
+	class OverrideOfBadOverride extends BadOverrideOfFinalMethod {
+		void doNotOverride() {}
+	}
+
+	class ExtendingClassWithNoOverrides extends WithFinalMethod {
+		void notOverridingAnything() {}
+	}
 
 }

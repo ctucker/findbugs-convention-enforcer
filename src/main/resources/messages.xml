@@ -1,5 +1,5 @@
 <MessageCollection>
-	<Detector class="com.cjtucker.findbugs.conventionenforcer.IllegalExtensionOfFinalAnnotatedClass">
+	<Detector class="com.cjtucker.findbugs.conventionenforcer.IllegalExtensionOfFinalAnnotatedElement">
 		<Details>
 			<![CDATA[
 <p> This detector finds extensions of classes that have been marked with the @Final annotation.  Classes marked @Final
@@ -18,6 +18,18 @@ should not have subclasses in production code.
 ]]>
 		</Details>
 	</BugPattern>
+
+	<BugPattern type="IEF_ILLEGAL_EXTENSION_OF_FINAL_METHOD">
+		<ShortDescription>Found illegal extension of final method</ShortDescription>
+		<LongDescription>Method {0} overrides the @Final annotated method {1}</LongDescription>
+		<Details>
+			<![CDATA[
+<p> Method {0} may not extend from the @Final-annotated method {1}.  Such extensions are prohibited: an @Final
+ marked method must be treated as a final method in production code.
+]]>
+		</Details>
+	</BugPattern>
+
 
 	<BugCode abbrev="IEF">Found illegal extension of final element</BugCode>
 </MessageCollection>

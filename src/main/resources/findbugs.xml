@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <FindbugsPlugin defaultenabled="true" >
-	<Detector class="com.cjtucker.findbugs.conventionenforcer.IllegalExtensionOfFinalAnnotatedClass"
+	<Detector class="com.cjtucker.findbugs.conventionenforcer.IllegalExtensionOfFinalAnnotatedElement"
 			  speed="fast"
-			  reports="IEF_ILLEGAL_EXTENSION_OF_FINAL_CLASS" />
+			  reports="IEF_ILLEGAL_EXTENSION_OF_FINAL_CLASS,IEF_ILLEGAL_EXTENSION_OF_FINAL_METHOD" />
+
 	<BugPattern abbrev="IEF" type="IEF_ILLEGAL_EXTENSION_OF_FINAL_CLASS" category="BAD_PRACTICE" />
+	<BugPattern abbrev="IEF" type="IEF_ILLEGAL_EXTENSION_OF_FINAL_METHOD" category="BAD_PRACTICE" />
 </FindbugsPlugin>
