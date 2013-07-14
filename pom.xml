@@ -6,6 +6,7 @@
 	<groupId>com.cjtucker</groupId>
 	<artifactId>findbugs-convention-enforcer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
@@ -13,6 +14,11 @@
 			<distribution>repo</distribution>
 		</license>
 	</licenses>
+
+	<properties>
+		<github.global.server>github</github.global.server>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.google.code.findbugs</groupId>
@@ -43,7 +49,42 @@
 					<altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
 				</configuration>
 			</plugin>
+
+			<plugin>
+				<groupId>com.github.github</groupId>
+				<artifactId>site-maven-plugin</artifactId>
+				<version>0.8</version>
+				<configuration>
+					<message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
+					<noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
+					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
+					<branch>refs/heads/mvn-repo</branch>						<!-- remote branch name -->
+					<includes>
+						<include>**/*</include>
+					</includes>
+					<merge>true</merge>
+					<repositoryName>findbugs-convention-enforcer</repositoryName>		<!-- github repo name -->
+					<repositoryOwner>ctucker</repositoryOwner>    				<!-- github username  -->
+				</configuration>
+				<executions>
+					<!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
+					<execution>
+						<goals>
+							<goal>site</goal>
+						</goals>
+						<phase>deploy</phase>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>github</id>
+			<name>GitHub ${project.artifactId} Repository</name>
+			<url>https://raw.github.com/ctucker/${project.artifactId}/mvn-repo</url>
+		</repository>
+	</distributionManagement>
 
 </project>
