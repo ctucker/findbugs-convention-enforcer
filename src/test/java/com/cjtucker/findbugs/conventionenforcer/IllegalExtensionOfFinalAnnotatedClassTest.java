@@ -1,11 +1,12 @@
-package com.cjtucker.findbugsfinaldetector;
+package com.cjtucker.findbugs.conventionenforcer;
 
-import static com.cjtucker.findbugsfinaldetector.Samples.*;
+import static com.cjtucker.findbugs.conventionenforcer.Samples.*;
 
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import com.cjtucker.findbugs.conventionenforcer.IllegalExtensionOfFinalAnnotatedClass;
 import com.youdevise.fbplugins.tdd4fb.DetectorAssert;
 import edu.umd.cs.findbugs.BugReporter;
 
@@ -24,26 +25,26 @@ public class IllegalExtensionOfFinalAnnotatedClassTest {
 	@Test
 	public void
 	raisesABugAgainsClassExtendingSuperclassWithFinalAnnotation() throws Exception {
-		DetectorAssert.assertBugReported(BadClass.class, detector, bugReporter);
+		DetectorAssert.assertBugReported(Samples.BadClass.class, detector, bugReporter);
 	}
 
 	@Test
 	public void
 	raisesNoBugAgainstClassWithNoExplicitSuperclass() throws Exception {
-		DetectorAssert.assertNoBugsReported(SafeToExtend.class, detector, bugReporter);
+		DetectorAssert.assertNoBugsReported(Samples.SafeToExtend.class, detector, bugReporter);
 	}
 
 	@Test
 	public void
 	raisesNoBugAgainstSubclassWithFinalAnnotation() throws Exception {
-		DetectorAssert.assertNoBugsReported(FinalSubclass.class, detector, bugReporter);
+		DetectorAssert.assertNoBugsReported(Samples.FinalSubclass.class, detector, bugReporter);
 	}
 
 
 	@Test
 	public void
 	raisesNoBugAgainstClassWithSuperclassThatDoesNotHaveFinalAnnotation() throws Exception {
-		DetectorAssert.assertNoBugsReported(GoodSubclass.class, detector, bugReporter);
+		DetectorAssert.assertNoBugsReported(Samples.GoodSubclass.class, detector, bugReporter);
 	}
 
 

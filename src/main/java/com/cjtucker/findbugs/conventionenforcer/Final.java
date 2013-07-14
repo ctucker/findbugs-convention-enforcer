@@ -1,4 +1,4 @@
-package com.cjtucker.findbugsfinaldetector;
+package com.cjtucker.findbugs.conventionenforcer;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

@@ -1,8 +1,11 @@
-package com.cjtucker.findbugsfinaldetector;
+package com.cjtucker.findbugs.conventionenforcer;
+
+import com.cjtucker.findbugs.conventionenforcer.Final;
 
 public class Samples {
 
-	@Final static class ShouldNotBeExtended {}
+	@Final
+	static class ShouldNotBeExtended {}
 
 	static class BadClass extends ShouldNotBeExtended {}
 

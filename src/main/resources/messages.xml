@@ -1,5 +1,5 @@
 <MessageCollection>
-	<Detector class="com.cjtucker.findbugsfinaldetector.IllegalExtensionOfFinalAnnotatedClass">
+	<Detector class="com.cjtucker.findbugs.conventionenforcer.IllegalExtensionOfFinalAnnotatedClass">
 		<Details>
 			<![CDATA[
 <p> This detector finds extensions of classes that have been marked with the @Final annotation.  Classes marked @Final

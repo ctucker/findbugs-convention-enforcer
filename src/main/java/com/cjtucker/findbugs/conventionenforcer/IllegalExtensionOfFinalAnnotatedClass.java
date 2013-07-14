@@ -1,4 +1,4 @@
-package com.cjtucker.findbugsfinaldetector;
+package com.cjtucker.findbugs.conventionenforcer;
 
 import edu.umd.cs.findbugs.BugInstance;
 import edu.umd.cs.findbugs.BugReporter;
