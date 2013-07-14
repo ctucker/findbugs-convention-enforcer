@@ -1,4 +1,6 @@
-<FindbugsPlugin>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<FindbugsPlugin defaultenabled="true" >
 	<Detector class="com.cjtucker.findbugsfinaldetector.IllegalExtensionOfFinalAnnotatedClass"
 			  speed="fast"
 			  reports="IEF_ILLEGAL_EXTENSION_OF_FINAL_CLASS" />

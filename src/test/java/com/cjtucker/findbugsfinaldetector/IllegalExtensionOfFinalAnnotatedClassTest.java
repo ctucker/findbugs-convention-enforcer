@@ -3,11 +3,13 @@ package com.cjtucker.findbugsfinaldetector;
 import static com.cjtucker.findbugsfinaldetector.Samples.*;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 
 import com.youdevise.fbplugins.tdd4fb.DetectorAssert;
 import edu.umd.cs.findbugs.BugReporter;
 
+@Ignore
 public class IllegalExtensionOfFinalAnnotatedClassTest {
 
 	private BugReporter bugReporter;

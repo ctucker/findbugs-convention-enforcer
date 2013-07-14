@@ -10,11 +10,11 @@ should not have subclasses in production code.
 
 	<BugPattern type="IEF_ILLEGAL_EXTENSION_OF_FINAL_CLASS">
 		<ShortDescription>Found illegal extension of final class</ShortDescription>
-		<LongDescription>Class {1} extends the @Final annotated class {2}</LongDescription>
+		<LongDescription>Class {0} extends the @Final annotated class {1}</LongDescription>
 		<Details>
 			<![CDATA[
-<p> Class {1} may not extend from the class {2} marked @Final.  Such extensions are prohibited: an @Final marked class
- must be treated as a final class in production code.
+<p> Class {0} may not extend from the class @Final-annotated class {1}.  Such extensions are prohibited: an @Final
+ marked class must be treated as a final class in production code.
 ]]>
 		</Details>
 	</BugPattern>
